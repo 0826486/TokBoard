@@ -1,4 +1,12 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 * {
+    font-family: 'Pretendard-Regular';
     background-color: #DFF2EB;
 }
 
@@ -7,4 +15,48 @@ h2 {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+}
+
+.input {
+    text-align: center;
+    margin-top: 20px;
+    line-height: 60px;
+}
+
+.name,
+.title,
+.in,
+.passwd {
+    border: 1.6px solid #4A628A;
+    border-radius: 5px;
+    outline: none;
+}
+
+.name:focus,
+.title:focus,
+.in:focus,
+.passwd:focus {
+    border: 1.6px solid #4A628A;
+}
+
+.complete,
+.try {
+    border: 1.5px solid #4A628A;
+    border-radius: 3px;
+    padding: 6px 8px;
+}
+
+.complete:hover,
+.try:hover {
+    background-color: #B9E5E8;
+}
+ 
+.Attachfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file {
+    width: 165px;
 }
