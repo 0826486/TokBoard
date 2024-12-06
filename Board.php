@@ -5,13 +5,15 @@ $title = $_POST['title'];
 $grade = $_POST['grade'];
 $phone = $_POST['phone'];
 $detail = $_POST['detail'];
-$file = $_FILES['file'];
 
 // DB 연결
 include('./conn.php');
 
-// 쿼리 날리기
-$sql = "insert into board(username, title, grade, phone, detail, file) values('$username', '$title', '$grade', '$phone', '$detail', '$file')";
+$sql = "insert into board (username, title, grade, phone, detail, file) values ('$username', '$title', '$grade', '$phone', '$detail', '$filePath')";
+// 쿼리 실행
 mysqli_query($conn, $sql);
 
+echo "<script>alert('작성 완료 되었습니다.')</script>";
+
+mysqli_close($conn); // DB 연결 종료
 ?>
