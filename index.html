@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <form method="post" action="Board.php">
+    <form method="post" action="Board.php" enctype="multipart/form-data">
         <h2>글쓰기</h2>
         
         <div class="input">
-            이름 <input type="text" class="name" name="name"></br>
+            이름 <input type="text" class="name" name="username"></br>
             제목 <input type="text" class="title" name="title"></br>
             학년 <select name="grade">
                 <option value="1th">1학년</option>
@@ -20,9 +20,10 @@
             </select></br>
 
             휴대폰
-            <input type="radio" name="phone" class="phonenum">SKT
-            <input type="radio" name="phone" class="phonenum">KTF
-            <input type="radio" name="phone" class="phonenum">LGU+ </br>
+            <input type="radio" name="phone" value="SKT" class="phonenum">SKT
+            <input type="radio" name="phone" value="KTF" class="phonenum">KTF
+            <input type="radio" name="phone" value="LGU+" class="phonenum">LGU+ </br>
+
 
             내용 <input type="text" name="detail" class="in"> </br>
 
