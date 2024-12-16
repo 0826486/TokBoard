@@ -43,7 +43,7 @@ $sql = "insert into board (username, title, grade, phone, detail, file) values (
 
 // 쿼리 실행 및 결과 확인
 if (mysqli_query($conn, $sql)) {
-    echo "<script>alert('작성 완료 되었습니다.'); window.location.href='index.php';</script>";
+    echo "<script>alert('작성 완료 되었습니다.'); window.location.href='View.php';</script>";
 } else {
     echo "<script>alert('작성 실패: " . mysqli_error($conn) . "');</script>";
 }
