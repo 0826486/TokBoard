@@ -18,13 +18,6 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
         mkdir($upload);
     }
 
-    // 파일 이동
-    if (move_uploaded_file($_FILES['file']['tmp_name'], $filePath)) {
-        echo "<script>alert('파일 업로드 성공');</script>";
-    } else {
-        echo "<script>alert('파일 업로드 실패');</script>";
-        $filePath = '';
-    }
 }
 
 // DB 연결
