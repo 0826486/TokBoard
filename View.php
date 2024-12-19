@@ -38,7 +38,7 @@
 </head>
 <body>
     <table>
-    <h1>게시판</h1>
+    <h1>🐸 게시판 🐸</h1>
 
     <div class="board-container">
         <div class="board-item">
