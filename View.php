@@ -1,3 +1,12 @@
+<?php
+// DB 연결
+include('./conn.php');
+
+// 게시판 데이터 조회 쿼리
+$sql = "SELECT * FROM board ORDER BY created_at DESC";
+$result = mysqli_query($conn, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +36,12 @@
 
         .board-item p {
             margin-left: 20px;
-            margin-bottom: 50px;
-            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        .board-item a {
+            color: blue;
+            text-decoration: underline;
         }
 
         .board-item:hover {
@@ -37,26 +50,31 @@
     </style>
 </head>
 <body>
-    <table>
-    <h1>🐸 게시판 🐸</h1>
+<h1>🐸 게시판 🐸</h1>
 
-    <div class="board-container">
-        <div class="board-item">
-            <p>제목 : </p>
-            <p>이름 : </p>
-            <p>학년 : </p>
-            <p>내용 : </p>
-            <p>사진 보기</p>
-        </div>
-    </div>
-    <?php
-    include('./conn.php');
+<div class="board-container">
+    <?php if (mysqli_num_rows($result) > 0): ?>
+        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+            <div class="board-item">
+                <p><strong>제목:</strong> <?= htmlspecialchars($row['title']) ?></p>
+                <p><strong>이름:</strong> <?= htmlspecialchars($row['username']) ?></p>
+                <p><strong>학년:</strong> <?= htmlspecialchars($row['grade']) ?></p>
+                <p><strong>내용:</strong><br><?= nl2br(htmlspecialchars($row['detail'])) ?></p>
+                <p>
+                    <strong>사진:</strong> 
+                    <?php if (!empty($row['file'])): ?>
+                        <a href="<?= htmlspecialchars($row['file']) ?>" target="_blank">사진 보기</a>
+                    <?php else: ?>
+                        없음
+                    <?php endif; ?>
+                </p>
+            </div>
+        <?php endwhile; ?>
+    <?php else: ?>
+        <p style="text-align:center">등록된 게시물이 없습니다.</p>
+    <?php endif; ?>
+</div>
 
-    // 게시판 데이터 조회 쿼리
-    $sql = "select * from board order by created_at desc";
-    $result = mysqli_query($conn, $sql);
-    $cnt = mysqli_num_rows($result);
-
-    ?>
-    </table>
+<?php mysqli_close($conn); ?>
 </body>
+</html>
