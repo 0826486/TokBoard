@@ -62,6 +62,7 @@ $result = mysqli_query($conn, $sql);
                 <p><strong>내용:</strong><br><?= nl2br(htmlspecialchars($row['detail'])) ?></p>
                 <p>
                     <strong>사진:</strong> 
+                    <!-- 만약에 사진을 안 올렸으면 없다고 보여주기 -->
                     <?php if (!empty($row['file'])): ?>
                         <a href="<?= htmlspecialchars($row['file']) ?>" target="_blank">사진 보기</a>
                     <?php else: ?>
@@ -70,6 +71,7 @@ $result = mysqli_query($conn, $sql);
                 </p>
             </div>
         <?php endwhile; ?>
+    <!-- 등록된 게시물이 없으면 없다고 보이기 -->
     <?php else: ?>
         <p style="text-align:center">등록된 게시물이 없습니다.</p>
     <?php endif; ?>
