@@ -53,6 +53,7 @@ $result = mysqli_query($conn, $sql);
 <h1>🐸 게시판 🐸</h1>
 
 <div class="board-container">
+    <!-- DB에서 가져온 데이터 처리 -->
     <?php if (mysqli_num_rows($result) > 0): ?>
         <?php while ($row = mysqli_fetch_assoc($result)): ?>
             <div class="board-item">
