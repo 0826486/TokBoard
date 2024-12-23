@@ -57,12 +57,12 @@ $result = mysqli_query($conn, $sql);
     <?php if (mysqli_num_rows($result) > 0): ?>
         <?php while ($row = mysqli_fetch_assoc($result)): ?>
             <div class="board-item">
-                <p><strong>제목:</strong> <?= htmlspecialchars($row['title']) ?></p>
-                <p><strong>이름:</strong> <?= htmlspecialchars($row['username']) ?></p>
-                <p><strong>학년:</strong> <?= htmlspecialchars($row['grade']) ?></p>
-                <p><strong>내용:</strong><br><?= nl2br(htmlspecialchars($row['detail'])) ?></p>
+                <p>제목: <?= htmlspecialchars($row['title']) ?></p>
+                <p>이름: <?= htmlspecialchars($row['username']) ?></p>
+                <p>학년: <?= htmlspecialchars($row['grade']) ?></p>
+                <p>내용: <?= nl2br(htmlspecialchars($row['detail'])) ?></p>
                 <p>
-                    <strong>사진:</strong> 
+                    사진:
                     <!-- 만약에 사진을 안 올렸으면 없다고 보여주기 -->
                     <?php if (!empty($row['file'])): ?>
                         <a href="<?= htmlspecialchars($row['file']) ?>" target="_blank">사진 보기</a>
