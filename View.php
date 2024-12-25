@@ -47,6 +47,7 @@ $result = mysqli_query($conn, $sql);
         .board-item:hover {
             transform: translateY(-9px);
         }
+
     </style>
 </head>
 <body>
