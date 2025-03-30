@@ -24,7 +24,7 @@ $result = mysqli_query($conn, $sql);
         }
         .board-item {
             margin: 20px auto;
-            padding: 20px 15px;
+            padding: 20px 10px;
             border: 1px solid #ddd;
             border-radius: 9px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);

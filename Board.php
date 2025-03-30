@@ -16,10 +16,11 @@ if (!is_dir($uploadDir)) {
 
 if (!empty($_FILES['file']['name'])) {
     $fileName = basename($_FILES['file']['name']);
-    $targetFilePath = $uploadDir . $fileName;
+    $uniqueFileName = time() . '_' . $fileName; // 고유한 파일 이름 생성
+    $targetFilePath = $uploadDir . $uniqueFileName;
 
     if (move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath)) {
-        $filePath = $targetFilePath
+        $filePath = $targetFilePath;
     } else {
         echo "<script>alert('파일 업로드에 실패하였습니다.'); history.back();</script>";
         exit;
