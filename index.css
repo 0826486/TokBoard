@@ -10,6 +10,10 @@
     background-color: #DFF2EB;
 }
 
+h1 {
+    margin-right: 30px;
+}
+
 h2 {
     display: flex;
     justify-content: center;
