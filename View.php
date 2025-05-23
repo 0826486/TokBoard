@@ -109,7 +109,6 @@ $result = mysqli_query($conn, $sql);
             padding: 10px 18px;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
             border: none;
             cursor: pointer;
             font-size: 1rem;
