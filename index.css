@@ -57,6 +57,10 @@ h1 {
     background-color: #ffffff;
 }
 
+.Attachfile {
+    margin-bottom: 20px;
+}
+
 .Attachfile span {
     font-size: 14px;
     color: #777;
@@ -64,8 +68,14 @@ h1 {
     display: inline-block;
 }
 
-button.complete,
-button.try {
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+button.complete {
     padding: 13px;
     border: none;
     border-radius: 14px;
@@ -74,23 +84,34 @@ button.try {
     transition: background-color 0.2s ease-in-out;
     font-family: "Pretendard-Regular";
     width: 100%;
-    margin-top: 12px;
-}
-
-button.complete {
+    max-width: 520px;
     background-color: #4EAC9B;
     color: white;
+    margin-top: 0;
 }
 
 button.complete:hover {
     background-color: #3D7C6F;
 }
 
-button.try {
-    background-color: #e5e5e5;
-    color: #333;
+.button-group .btn-link {
+    display: inline-block;
+    padding: 13px;
+    background-color: #4EAC9B;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Pretendard-Regular";
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 0;
 }
 
-button.try:hover {
-    background-color: #d1d1d1;
+.button-group .btn-link:hover {
+    background-color: #3D7C6F;
 }

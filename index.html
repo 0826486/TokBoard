@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TokBoard</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
     <form method="post" action="Board.php" enctype="multipart/form-data">
+
         <h1>TokBoard</h1>
-        
+
         <div class="input">
             이름 <input type="text" class="name" name="username" required><br>
             제목 <input type="text" class="title" name="title" required><br>
-            학년 
+            학년
             <select name="grade" required>
                 <option value="1th">1학년</option>
                 <option value="2th">2학년</option>
@@ -29,9 +32,12 @@
                 <input type="file" name="file" class="file"><br>
             </div>
 
-            <button type="submit" class="complete" name="button">작성완료</button>
-            <button type="reset" class="try" name="button">다시입력</button>
+            <div class="button-group">
+                <button type="submit" class="complete" name="button">작성완료</button>
+                <a href="View.php" class="btn-link">게시글 보러 가기</a>
+            </div>            
         </div>
     </form>
 </body>
+
 </html>
