@@ -90,6 +90,15 @@ $result = mysqli_query($conn, $sql);
             color: #3f4e4f;
         }
 
+        .board-item p a {
+            text-decoration: none;
+            color: #3f4e4f;
+        }
+
+        .board-item p a:hover {
+            text-decoration: underline;
+        }
+
         .no-posts {
             font-size: 1.2rem;
             color: #888;
@@ -137,7 +146,11 @@ $result = mysqli_query($conn, $sql);
                         <img src="<?= htmlspecialchars($row['file']) ?>" alt="게시물 이미지" />
                     <?php endif; ?>
                     <div>
-                        <p><?= htmlspecialchars($row['title']) ?></p>
+                        <p>
+                            <a href="post.php?id=<?= $row['id'] ?>">
+                                <?= htmlspecialchars($row['title']) ?>
+                            </a>
+                        </p>
                         <p>👤 이름: <?= htmlspecialchars($row['username']) ?></p>
                         <p>🎓 학년: <?= htmlspecialchars($row['grade']) ?></p>
                         <p>📝 내용: <?= nl2br(htmlspecialchars($row['detail'])) ?></p>
