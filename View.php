@@ -169,7 +169,7 @@ $result = mysqli_query($conn, $sql);
     <h1>🐸 Tok 게시판 🐸</h1>
 
     <div class="home-btn">
-        <a href="index.html" class="btn">홈으로 돌아가기</a>
+        <a href="index.html" class="btn">← 게시글 쓰러 가기</a>
     </div>
 
     <div class="board-container">
