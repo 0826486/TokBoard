@@ -1,7 +1,16 @@
 <?php
 include('./conn.php');
 
-$sql = "SELECT * FROM board ORDER BY created_at DESC";
+$posts_per_page = 3;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$start = ($page - 1) * $posts_per_page;
+
+$count_sql = "SELECT COUNT(*) as total FROM board";
+$count_result = mysqli_query($conn, $count_sql);
+$total_posts = mysqli_fetch_assoc($count_result)['total'];
+$total_pages = ceil($total_posts / $posts_per_page);
+
+$sql = "SELECT * FROM board ORDER BY created_at DESC LIMIT $posts_per_page OFFSET $start";
 $result = mysqli_query($conn, $sql);
 ?>
 
@@ -128,6 +137,31 @@ $result = mysqli_query($conn, $sql);
         .btn:hover {
             background-color: #3b5741;
         }
+
+        .pagination {
+            margin-top: 40px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .pagination a {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            color: #4e6c50;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color: #4e6c50;
+            color: white;
+            font-weight: bold;
+            border-color: #4e6c50;
+        }
+
+        .pagination a:hover {
+            background-color: #d3e0d0;
+        }
     </style>
 </head>
 
@@ -160,6 +194,12 @@ $result = mysqli_query($conn, $sql);
         <?php else: ?>
             <p class="no-posts">등록된 게시물이 없습니다.</p>
         <?php endif; ?>
+    </div>
+
+    <div class="pagination">
+        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+            <a href="?page=<?= $i ?>" class="<?= $i === $page ? 'active' : '' ?>"><?= $i ?></a>
+        <?php endfor; ?>
     </div>
 
     <?php mysqli_close($conn); ?>
