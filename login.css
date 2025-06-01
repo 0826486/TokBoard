@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Pretendard-Regular';
+    background-color: #DFF2EB;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2F4858;
+    text-align: center;
+    margin-bottom: 16px;
+    font-family: 'Pretendard-Regular';
+}
+
+.join-container {
+    background-color: #fff;
+    padding: 30px 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2F4858;
+    margin-bottom: 20px;
+    font-family: 'Pretendard-Regular';
+}
+
+.join input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2F4858;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Pretendard-Regular';
+}
+
+.login-btn:hover {
+    background-color: #3b5d70;
+}
+
+.ex-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.ex-btn a {
+    background-color: #4e6c50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Pretendard-Regular';
+    display: inline-block;
+}
+
+.ex-btn a:hover {
+    background-color: #3b5741;
+}
