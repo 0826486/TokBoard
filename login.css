@@ -26,11 +26,11 @@ h1 {
 
 .login-container {
     background-color: #fff;
-    padding: 30px 24px;
+    padding: 40px 32px;
     border-radius: 16px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
     width: 100%;
-    max-width: 320px;
+    max-width: 400px;
     text-align: center;
 }
 
@@ -38,26 +38,26 @@ h2 {
     font-size: 24px;
     font-weight: 600;
     color: #2F4858;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     font-family: 'Pretendard-Regular';
 }
 
 .login input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 16px;
+    padding: 14px;
+    margin-bottom: 18px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 14px;
     font-family: 'Pretendard-Regular';
 }
 
 .login-btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: #2F4858;
     color: #fff;
-    font-size: 15px;
+    font-size: 16px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -79,7 +79,7 @@ h2 {
 .ex-btn a {
     background-color: #4e6c50;
     color: white;
-    padding: 6px 12px;
+    padding: 8px 14px;
     border-radius: 6px;
     text-decoration: none;
     border: none;
