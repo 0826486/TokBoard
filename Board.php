@@ -22,6 +22,15 @@ if (!is_dir($uploadDir)) {
 
 if (!empty($_FILES['file']['name'])) {
     $fileName = basename($_FILES['file']['name']);
+    $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'txt'];
+
+    if (!in_array($fileExtension, $allowedExtensions)) {
+        echo "<script>alert('허용되지 않은 파일 형식입니다.'); history.back();</script>";
+        exit;
+    }
+
     $uniqueFileName = time() . '_' . $fileName;
     $targetFilePath = $uploadDir . $uniqueFileName;
 
@@ -45,3 +54,4 @@ if (mysqli_stmt_execute($stmt)) {
 
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
+?>
